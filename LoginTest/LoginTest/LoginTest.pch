@@ -1,0 +1,15 @@
+//
+//  LoginTest.pch
+//  LoginTest
+//
+//  Created by Hsusue on 2018/7/22.
+//  Copyright © 2018年 Hsusue. All rights reserved.
+//
+
+#ifndef LoginTest_pch
+#define LoginTest_pch
+
+#import "UserDefault.h"
+#import "HSUUserDefault.h"
+
+#endif /* LoginTest_pch */
