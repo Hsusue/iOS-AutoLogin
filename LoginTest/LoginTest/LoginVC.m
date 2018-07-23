@@ -90,19 +90,22 @@
 
 - (void)loginSuccess {
     [HSUUserDefault saveUserDefaultObject:self.userNameTextField.text key:kUserName];
-    BOOL isRememberPsd = self.rememberSwitch.on;
-    if (isRememberPsd) {
-        [HSUUserDefault saveUserDefaultObject:@(YES) key:kRememberPassword];
-        [HSUUserDefault saveUserDefaultObject:self.psdTextField.text key:kUserPassword];
-    } else {
-        [HSUUserDefault saveUserDefaultObject:@(NO) key:kRememberPassword];
-        [HSUUserDefault saveUserDefaultObject:nil key:kUserPassword];
-    }
     BOOL isAutoLogin = self.autoLoginSwitch.on;
     if (isAutoLogin) {
         [HSUUserDefault saveUserDefaultObject:@(YES) key:kAutoLogin];
-    } else {
+        [HSUUserDefault saveUserDefaultObject:@(YES) key:kRememberPassword];
+        [HSUUserDefault saveUserDefaultObject:self.psdTextField.text key:kUserPassword];
+    } else { // 不自动登录
         [HSUUserDefault saveUserDefaultObject:@(NO) key:kAutoLogin];
+        
+        BOOL isRememberPsd = self.rememberSwitch.on;
+        if (isRememberPsd) { // 记住密码
+            [HSUUserDefault saveUserDefaultObject:@(YES) key:kRememberPassword];
+            [HSUUserDefault saveUserDefaultObject:self.psdTextField.text key:kUserPassword];
+        } else {
+            [HSUUserDefault saveUserDefaultObject:@(NO) key:kRememberPassword];
+            [HSUUserDefault saveUserDefaultObject:nil key:kUserPassword];
+        }
     }
     
     // 切换AppDelegate的控制器
