@@ -13,6 +13,7 @@
 #import "HSUTextField.h"
 #import "HSUTabBarController.h"
 #import "AppDelegate.h"
+#import "HSUEncipher.h"
 
 @interface LoginVC ()<UITextFieldDelegate, HSUTextFieldDelegate>
 
@@ -94,14 +95,14 @@
     if (isAutoLogin) {
         [HSUUserDefault saveUserDefaultObject:@(YES) key:kAutoLogin];
         [HSUUserDefault saveUserDefaultObject:@(YES) key:kRememberPassword];
-        [HSUUserDefault saveUserDefaultObject:self.psdTextField.text key:kUserPassword];
+        [HSUUserDefault saveUserDefaultObject:[HSUEncipher base64EncodeString:self.psdTextField.text] key:kUserPassword];
     } else { // 不自动登录
         [HSUUserDefault saveUserDefaultObject:@(NO) key:kAutoLogin];
         
         BOOL isRememberPsd = self.rememberSwitch.on;
         if (isRememberPsd) { // 记住密码
             [HSUUserDefault saveUserDefaultObject:@(YES) key:kRememberPassword];
-            [HSUUserDefault saveUserDefaultObject:self.psdTextField.text key:kUserPassword];
+            [HSUUserDefault saveUserDefaultObject:[HSUEncipher base64EncodeString:self.psdTextField.text] key:kUserPassword];
         } else {
             [HSUUserDefault saveUserDefaultObject:@(NO) key:kRememberPassword];
             [HSUUserDefault saveUserDefaultObject:nil key:kUserPassword];
@@ -230,7 +231,7 @@
     BOOL isRemember = [[HSUUserDefault getUserDefaultObject:kRememberPassword] boolValue];
     self.rememberSwitch.on = isRemember;
     if (isRemember) {
-        self.psdTextField.text = [HSUUserDefault getUserDefaultObject:kUserPassword];
+        self.psdTextField.text = [HSUEncipher base64DecodeString:[HSUUserDefault getUserDefaultObject:kUserPassword]];
     }
     
 }
