@@ -20,7 +20,7 @@
 		551C42FA2104A0E900A26DE4 /* UserDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 551C42F92104A0E900A26DE4 /* UserDefault.m */; };
 		551C42FF2104A8FD00A26DE4 /* HSUUserDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 551C42FE2104A8FD00A26DE4 /* HSUUserDefault.m */; };
 		556B8EC42108A523000C8C50 /* HSUCookieTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 556B8EC22108A523000C8C50 /* HSUCookieTool.m */; };
-		556B8EC72108A584000C8C50 /* HSUEncipher.m in Sources */ = {isa = PBXBuildFile; fileRef = 556B8EC62108A584000C8C50 /* HSUEncipher.m */; };
+		556B8ED321096910000C8C50 /* NSString+encrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 556B8ED221096910000C8C50 /* NSString+encrypt.m */; };
 		558098E2210568F000BE42DC /* HSUTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 558098E0210568F000BE42DC /* HSUTabBarController.m */; };
 		558098E621056B1900BE42DC /* FirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 558098E521056B1900BE42DC /* FirstVC.m */; };
 		558098E921056B2700BE42DC /* SecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 558098E821056B2700BE42DC /* SecondVC.m */; };
@@ -74,8 +74,8 @@
 		551C42FE2104A8FD00A26DE4 /* HSUUserDefault.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSUUserDefault.m; sourceTree = "<group>"; };
 		556B8EC22108A523000C8C50 /* HSUCookieTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSUCookieTool.m; sourceTree = "<group>"; };
 		556B8EC32108A523000C8C50 /* HSUCookieTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSUCookieTool.h; sourceTree = "<group>"; };
-		556B8EC52108A584000C8C50 /* HSUEncipher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSUEncipher.h; sourceTree = "<group>"; };
-		556B8EC62108A584000C8C50 /* HSUEncipher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSUEncipher.m; sourceTree = "<group>"; };
+		556B8ED121096910000C8C50 /* NSString+encrypt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+encrypt.h"; sourceTree = "<group>"; };
+		556B8ED221096910000C8C50 /* NSString+encrypt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+encrypt.m"; sourceTree = "<group>"; };
 		558098E0210568F000BE42DC /* HSUTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSUTabBarController.m; sourceTree = "<group>"; };
 		558098E1210568F000BE42DC /* HSUTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSUTabBarController.h; sourceTree = "<group>"; };
 		558098E421056B1900BE42DC /* FirstVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstVC.h; sourceTree = "<group>"; };
@@ -215,8 +215,8 @@
 			children = (
 				556B8EC32108A523000C8C50 /* HSUCookieTool.h */,
 				556B8EC22108A523000C8C50 /* HSUCookieTool.m */,
-				556B8EC52108A584000C8C50 /* HSUEncipher.h */,
-				556B8EC62108A584000C8C50 /* HSUEncipher.m */,
+				556B8ED121096910000C8C50 /* NSString+encrypt.h */,
+				556B8ED221096910000C8C50 /* NSString+encrypt.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -410,10 +410,10 @@
 				556B8EC42108A523000C8C50 /* HSUCookieTool.m in Sources */,
 				551C42642103684100A26DE4 /* HSUTextField.m in Sources */,
 				551C423B2103673400A26DE4 /* main.m in Sources */,
+				556B8ED321096910000C8C50 /* NSString+encrypt.m in Sources */,
 				551C42FF2104A8FD00A26DE4 /* HSUUserDefault.m in Sources */,
 				551C422D2103673100A26DE4 /* AppDelegate.m in Sources */,
 				558098E921056B2700BE42DC /* SecondVC.m in Sources */,
-				556B8EC72108A584000C8C50 /* HSUEncipher.m in Sources */,
 				551C425F210367ED00A26DE4 /* LoginVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
